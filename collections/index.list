@@ -1,66 +1,40 @@
 {.section collection}
-
-  <!-- Project Detail -->
-  <div id="project">
-
-  {.repeated section collections}
-    {.if mainImage}
-    <div class="project-item clearfix visually-hidden" data-dynamic-href="/{urlId}/" data-type-name="{typeName}" {.if passwordProtected}data-type-protected{.end}>
-      <div class="meta">
-        <h1>{title}</h1>
-        {.if categories}<h2></h2>{.end}
-
-        <div class="body">{description}</div>
-        <div class="share-like">
-          {@|social-button-inline}
-        </div>
-      </div>
-      <div class="gallery" id="detail_{id}">
-        <div class="sqs-spin"></div>
-      </div>
-    </div>
-    {.end}
-  {.end}  
-
-    <!-- Navigation -->
-    <div class="switcher">
-      <div class="switcher-content">
-        <a class="projectPrev"></a>
-        <a class="projectHome"></a>
-        <a class="projectNext"></a>
-      </div>
-    </div>
-
-  </div>
-
-  <script>
-    Y.use('squarespace-ui-base', function(Y) {
-      Y.all(".project-item .meta h1").each(function (current) {
-        current.plug(Y.Squarespace.TextShrink);
-      });
-    });
-  </script>
-
-  <!-- Main Grid -->
-  <div id="grid" data-collection-id="{id}">
-  {.repeated section collections}
-    {.if mainImage}
-    <div class="item">
-      <a href="/{urlId}/" data-dynamic-load data-dynamic-receiver="#detail_{id}"   {.if passwordProtected}data-type-protected{.end}>
-        <div class="wrapper">
-          <div class="project-title">
-            <h2>{title}</h2>
-            <h3>&mdash; view &mdash;</h3>
-          </div>
-        </div>
-        {.section mainImage}
-          <img class="thumbnail loading" {@|image-meta} data-load="false" />
-          <noscript><img src="{assetUrl}?format=original"></noscript>
-        {.end}
-      </a>
-    </div>
-    {.end}
-  {.end}
-  </div>
+	<div id="indexList" class="masonry-container loading">
+		{.repeated section collections}
+			<article data-url-id="{urlId}" class="masonry-item">
+				<a href="{fullUrl}" class="masonry-link"></a>
+				<figure class="masonry-thumbnail">
+					<div class="img-wrapper intrinsic content-fill">
+						{.section mainImage}
+							<img {@|image-meta} />
+						{.or}
+							{.collectionTypeNameEquals? page}{.or}{.collectionTypeNameEquals? gallery}{.or}
+								{.collectionTypeNameEquals? album}
+									{.section metadata.albumCover}
+										<img {@|image-meta} />
+									{.end}
+								{.or}
+									{.section items}
+										{.section 0}
+											{.child-images?}
+												<img {@|child-image-meta} />
+											{.or}
+												{.main-image?}
+													<img {@|image-meta} />
+												{.end}
+											{.end}
+										{.end}
+									{.end}
+								{.end}
+							{.end}{.end}
+						{.end}
+					</div>
+				</figure>
+				<div class="masonry-overlay">
+					<section class="masonry-content">{.section title}<h1 class="masonry-title index-title">{@}</h1>{.end}</section>
+				</div>
+			</article>
+		{.end}
+	</div>
 
 {.end}

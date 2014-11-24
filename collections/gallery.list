@@ -1,28 +1,29 @@
-<div id="project">
 
-  {.section collection}
-  <div class="project-item" data-dynamic-href="{fullUrl}">
-    <div class="meta">
-      <h1>{title}</h1>
-      {.if categories}<h2></h2>{.end}
-
-      <section class="body">{description}</section>
-      <div class="share-like">
-        {@|social-button-inline}
-      </div>
-    </div>
-  {.end}
-    <div class="gallery">
-      {.repeated section items}
-        <a class="gallery-item" {.section clickthroughUrl}href="{@}"{.end}>
-
-        {.image?}<img {@|image-meta} data-image-stretch="false" class="loading"/>{.end}
-        {.video?}{@|video}{.end}
-        <div class="sqs-spin"></div>
-
-        </a>
-      {.end}
-    </div>
-  </div>
-  
+<div id="flowContent" class="loading">
+	{.section collection}
+		{.if title}<h1 class="gallery-title">{title}</h1>{.end}
+		{.if description}<div class="gallery-description">{description}</div>{.end}
+	{.end}
+</div>
+<div id="flowItems">
+	{.repeated section items}
+		<article class="flow-item{.if title || body || sourceUrl || clickthroughUrl} has-info{.end}{.video?} video{.end} ">
+			{.image?}
+				<img {@|image-meta} />
+			{.end}
+			{.video?}
+				{@|video}
+			{.end}
+			{.if title || body || sourceUrl || clickthroughUrl}
+				<div class="flow-item-info">
+					<h1>{title}</h1>
+					{.section body}{@}{.end}
+					{.if sourceUrl || clickthroughUrl}
+					<p class="flow-item-source">{.if sourceUrl}Source – {.end}<a href="{.if clickthroughUrl}{clickthroughUrl}{.or}{sourceUrl}{.end}" target="_blank">{.if sourceUrl}{sourceUrl}{.or}{.if clickthroughUrl}{clickthroughUrl}{.end}{.end}</a></p>
+					{.end}
+				</div>
+				<div class="button-expand"><div></div></div>
+			{.end}
+		</article>
+	{.end}
 </div>

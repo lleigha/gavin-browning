@@ -35,7 +35,7 @@
 }
 
 // tweak: { "category" : "Header", "type" : "color", "title" : "Site Title Color", "showOnlyWhenPresent" : "#siteTitle:only-child, .use-site-title-in-mobile-header", "target" : "#siteTitle" }
-@siteTitleColor: #242628;
+@siteTitleColor: #000000;
 
 // tweak: { "category" : "Header", "type" : "value", "title" : "Logo Size", "min" : 8, "max" : 160, "showOnlyWhenPresent" : "#logo img", "target" : "#logo" }
 @logoSize: 60px;
@@ -49,7 +49,7 @@
 }
 
 // tweak: { "category" : "Header", "type" : "color", "title" : "Site Tagline Color", "showOnlyWhenPresent" : "#siteTagline", "target" : "#siteTagline" }
-@siteTaglineColor: rgba(17, 17, 17, 0.382);
+@siteTaglineColor: rgba(0, 0, 0, 1);
 
 // tweak: { "category" : "Header", "type" : "checkbox", "title" : "Header Border", "active" : "false", "target" : "#header" }
 
@@ -57,7 +57,7 @@
 @headerBorderThickness: 1px;
 
 // tweak: { "category" : "Header", "type" : "color", "title" : "Header Border Color", "showOnlyWhenPresent" : ".header-border", "target" : "#header"  }
-@headerBorderColor: rgba(0, 0, 0, 0.1);
+@headerBorderColor: rgba(0, 0, 0, 1);
 
 // tweak: { "category" : "Header", "type" : "checkbox", "title" : "Use Site Title in Mobile Header", "active" : "true", "target" : "#header" }
 
@@ -82,7 +82,7 @@
 @navLinkSpacing: 6px;
 
 // tweak: { "category" : "Navigation", "type" : "color", "title" : "Primary Nav Link Color", "target" : ".navigation" }
-@navColor: #242628;
+@navColor: #000000;
 
 // tweak: { "category" : "Navigation", "type" : "font", "title" : "Secondary Nav Font", "loadAllVariants" : "true", "target" : ".navigation-secondary", "steps" : 0.1  }
 .nav-secondary-font {
@@ -107,7 +107,7 @@
 // tweak: { "category" : "Social", "type" : "dropdown", "title" : "Social Icon Style", "options" : [ "Round", "Square", "Icon Only" ], "default" : "Square", "showOnlyWhenPresent" : ".show-social-icons", "target" : ".social" }
 
 // tweak: { "category" : "Social", "type" : "color", "title" : "Social Icon Color", "target" : ".social", "showOnlyWhenPresent" : ".show-social-icons" }
-@socialColor: rgba(17, 17, 17, 0.4);
+@socialColor: rgba(0, 0, 0, 1);
 
 //-----------------------------------------
 //     Main Content
@@ -120,7 +120,7 @@
   text-transform: none;
 }
 // tweak: { "category" : "Main Content", "type" : "color", "title" : "Heading Color", "target" : "h1:not(#siteTitle), h2, h3:not(.comment-count)" }
-@headingColor: #242628;
+@headingColor: #000000;
 
 // tweak: { "category" : "Main Content", "type" : "font", "title" : "Body Font", "loadAllVariants" : "true", "target" : "#main .sqs-layout p, .summary-price"  }
 .body-font {
@@ -131,7 +131,7 @@
 }
 
 // tweak: { "category" : "Main Content", "type" : "color", "title" : "Body Text Color", "target" : "#main .sqs-layout p, .summary-price" }
-@bodyColor: rgba(17, 17, 17, 0.6);
+@bodyColor: rgba(0, 0, 0, 1);
 
 // tweak: { "category" : "Main Content", "type" : "font", "title" : "Meta Font", "loadAllVariants" : "true", "target" : ".entry-date-author, .entry-source, .entry-meta, .pagination, .flow-item-source, .summary-info-item, .product-mark, .masonry-item .product-mark.sale", "steps" : 0.1  }
 .meta-font {
@@ -141,17 +141,17 @@
 }
 
 // offtweak: { "category" : "Main Content", "type" : "color", "title" : "Meta Text Color", "target" : ".entry-date-author, .entry-source, .entry-meta, .pagination, .flow-item-source, .summary-info-item" }
-// @metaColor: rgba(0, 0, 0, 0.35);
+// @metaColor: rgba(0, 0, 0, 1);
 
 // tweak: { "category" : "Main Content", "type" : "color", "title" : "Link Color", "target" : "#main .sqs-block:not(.sqs-block-summary-v2) a, #main .sqs-block-summary-v2 .summary-excerpt a" }
-@linkColor: rgba(17, 17, 17, 0.75);
+@linkColor: rgba(0, 0, 0, 1);
 
 //-----------------------------------------
 //     Products
 //-----------------------------------------
 
 // tweak: { "category" : "Products", "type" : "color", "title" : "Product Background Color", "showOnlyWhenPresent" : ".collection-type-products.view-list", "target" : ".masonry-item" }
-@productColor: #242628;
+@productColor: #ffffff;
 
 // tweak: { "category" : "Products", "type" : "dropdown", "title" : "Product List Style", "options" : [ "Viewbook", "Catalog", "Showroom", "Flipcard" ], "default" : "Showroom", "showOnlyWhenPresent" : ".collection-type-products.view-list", "target" : ".masonry-item" }
 
@@ -173,7 +173,7 @@
 @productTitleColor: #ffffff;
 
 // tweak: { "category" : "Products", "type" : "color", "title" : "Product Price Color", "showOnlyWhenPresent" : ".collection-type-products.view-list", "target" : ".masonry-item .product-price" }
-@productPriceColor: rgba(0, 0, 0, 0.6);
+@productPriceColor: rgba(0, 0, 0, 1);
 
 // tweak: { "category" : "Products", "type" : "color", "title" : "Product Sale Color", "showOnlyWhenPresent" : ".collection-type-products .product-mark.sale", "target" : ".masonry-item .product-mark.sale" }
 @productSaleColor: #e60039;
@@ -194,7 +194,7 @@
 //-----------------------------------------
 
 // tweak: { "category" : "Index", "type" : "color", "title" : "Index Background Color", "showOnlyWhenPresent" : ".collection-type-index", "target" : ".masonry-item" }
-@indexColor: #242628;
+@indexColor: #ffffff;
 
 // tweak: { "category" : "Index", "type" : "dropdown", "title" : "Index List Title Style", "options" : [ "Overlay", "Color Overlay", "Under", "Always Show" ], "default" : "Overlay", "showOnlyWhenPresent" : ".collection-type-index", "target" : ".masonry-item" }
 
@@ -210,7 +210,7 @@
 // tweak: { "category" : "Index", "type" : "dropdown", "title" : "Index Aspect Ratio", "options" : [ "Auto", "1:1 Square", "3:2 Standard", "3:2 Standard (Vertical)", "4:3 Four-Thirds", "4:3 Four-Thirds (Vertical)", "16:9 Widescreen" ], "default" : "Auto", "showOnlyWhenPresent" : ".collection-type-index", "target" : ".masonry-item" }
 
 // tweak: { "category" : "Index", "type" : "color", "title" : "Index Item Color", "showOnlyWhenPresent" : ".collection-type-index.index-list-title-style-always-show, .collection-type-index.index-list-title-style-color-overlay", "target" : ".masonry-item" }
-@indexItemColor: rgba(0, 0, 0, 0.25);
+@indexItemColor: rgba(0, 0, 0, 1);
 
 // tweak: { "category" : "Index", "type" : "color", "title" : "Index Title Color", "showOnlyWhenPresent" : ".collection-type-index", "target" : ".masonry-title" }
 @indexTitleColor: #ffffff;

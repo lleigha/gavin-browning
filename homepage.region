@@ -53,17 +53,16 @@
 				{.section website}
 					<div id="siteHeader" data-content-field="site-title">
 						<a href="/about" id="logo" class="{.section logoImageUrl}has-img{.end}">{.section logoImageUrl}<img src="{logoImageUrl}?format=300w" alt="{siteTitle}" />{.end}{.section siteTitle}<h1 id="siteTitle">{@}</h1>{.end}</a>
+						{.section siteTagLine}<p id="siteTagline" data-content-field="site-tagline">{@}</p>{.end}
 					</div>
 				{.end}
 				<nav class="navigation">
 					<squarespace:navigation navigationId="main-nav" template="navigation" />
 				</nav>
 				<div class="lower-header loading">
-					<!--
 					<nav class="navigation-secondary">
 						<squarespace:navigation navigationId="secondary-nav" template="navigation" />
 					</nav>
-					!-->
 					{.section website}
 						{.if socialAccounts}
 						<nav class="social">
@@ -88,14 +87,14 @@
 		{.section item}
 			{.if productType}{.or}
 				{.main-image?}
-					<!--<figure id="thumbnail" class="content-fill"><img {@|image-meta} /></figure>!-->
+					<figure id="thumbnail" class="content-fill"><img {@|image-meta} /></figure>
 				{.end}
 			{.end}
 		{.or}
 			{.section collection}
 				{.collectionTypeNameEquals? products}{.or}{.collectionTypeNameEquals? gallery}{.or}{.collectionTypeNameEquals? index}{.or}
 					{.section mainImage}
-					<!--<figure id="thumbnail" class="content-fill"><img {@|image-meta} /></figure>!-->
+						<figure id="thumbnail" class="content-fill"><img {@|image-meta} /></figure>
 					{.end}
 				{.end}{.end}{.end}
 			{.end}

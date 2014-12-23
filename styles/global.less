@@ -16,7 +16,7 @@
 
 @contentPadding:40px;
 
-@navPadding:20px;
+@navPadding:18px;
 
 @flowWidth:800px;
 
@@ -431,12 +431,11 @@ body:not(.nav-opened){
 //-----------------------------------------
 
 #header{
-	position:relative;
 	z-index:3;
 	background:@headerColor;
 	width:100%;
 	height:@headerHeightMini;
-
+	margin: 0 auto;
 	overflow:hidden;
 
 
@@ -519,13 +518,16 @@ body:not(.nav-opened){
 }
 
 // Nav ------------
+
+
 .navigation{
 	.nav-font;
-	position: relative;
 	left: @headerWidth;
+	display: block;
+	float: right;
 
 	li{
-		margin-right:@navPadding;
+		margin-left:@navPadding;
 		line-height: 1em;
 		float: left;
 	}
@@ -822,15 +824,19 @@ body:not(.product-category-links-category-links-only){
 		top:0;
 		bottom:0;
 		height:@headerHeight;
-
+		width: 100%;
+		margin: 0 auto;
 		.overflow-auto;
 
 		>.wrapper{
 			height:auto;
 			padding-top:@contentPadding;
+			text-align: right;
+			width: 880px;
+			margin: auto;
 		}
 		.navigation{
-			display:block;
+			display:inline-block;
 		}
 	}
 	.lower-header{
@@ -845,7 +851,9 @@ body:not(.product-category-links-category-links-only){
 		display:none;
 	}
 	#siteHeader{
-		margin:0 @contentPadding;
+		display: block;
+		float: left;
+		text-align: left;
 	}
 	#logo{
 		height:auto;

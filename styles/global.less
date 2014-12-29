@@ -235,7 +235,7 @@ body{
 //     Body
 //-----------------------------------------
 .body-font {
-  font-family:"New Rail Alphabet Medium", Arial, sans-serif; 
+  font-family:"New Rail Alphabet Medium", Arial, serif; 
   font-weight:normal; 
   font-style:normal;
 }
@@ -527,9 +527,13 @@ body:not(.nav-opened){
 	float: right;
 
 	li{
-		margin-left:@navPadding;
+		margin-right:@navPadding;
 		line-height: 1em;
 		float: left;
+	}
+
+	li:last-child{
+		margin-right: 0px;
 	}
 
 	a{

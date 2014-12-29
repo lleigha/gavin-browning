@@ -16,9 +16,9 @@
 
 @contentPadding:40px;
 
-@navPadding:18px;
+@navPadding:20px;
 
-@flowWidth:808px;
+@flowWidth:880px;
 
 @thumbnailColor:@pageColor;
 
@@ -235,7 +235,7 @@ body{
 //     Body
 //-----------------------------------------
 .body-font {
-  font-family:"New Rail Alphabet Medium", Arial, serif; 
+  font-family:"New Rail Alphabet Medium", Arial, sans-serif; 
   font-weight:normal; 
   font-style:normal;
 }
@@ -888,6 +888,16 @@ body:not(.product-category-links-category-links-only){
 	}
 	
 }
+
+//-----------------------------------------
+//     block content
+//-----------------------------------------
+
+html .sqs-block.sqs-block-html .sqs-block-content {
+	margin-left: 195px;
+}
+
+
 //-----------------------------------------
 //     social
 //-----------------------------------------
@@ -970,7 +980,7 @@ body:not(.product-category-links-category-links-only){
 }
 @media screen and ( min-width: 641px ){
 	#main{
-		padding-top:@headerHeight;
+		padding-top:@headerHeight + 20px;
 		>.wrapper{
 			padding:ceil(@contentPadding*0.618);
 		}
@@ -982,7 +992,7 @@ body:not(.product-category-links-category-links-only){
 @media screen and ( min-width: 1025px ){
 	#main{
 		width:@contentWidth;
-		padding-top:@headerHeight;
+		padding-top:@headerHeight + 20px;
 		margin: auto;
 		>.wrapper{
 			padding:@navPadding 0px;
@@ -2347,7 +2357,6 @@ body:not(.product-category-links-category-links-only){
 
 		a:after,
 		a:before {
-			font-family: arial, sans-serif;
 			font-weight: normal;
 		}
 	}

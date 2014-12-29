@@ -13,8 +13,8 @@ audio:not([controls]) { display: none; }
 
 /* Base */
 html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
-body { margin: 0; font-size: 17px; line-height: 1.35em; }
-body, button, input, select, textarea { font-family: sans-serif; color: black; }
+body { margin: 0; font-size: 17px; line-height: 1.5em; letter-spacing: .3px; }
+body, button, input, select, textarea { font-family: "New Rail Alphabet Medium", sans-serif; ; color: black; font-weight: normal; }
 
 /* Links */
 a { color: black; text-decoration: none; }

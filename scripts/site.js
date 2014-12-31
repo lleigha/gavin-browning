@@ -196,8 +196,18 @@ Y.use('node', 'event-mouseenter', 'squarespace-util', function(Y) {
 		if(flowContent){
 			flowContent.removeClass('loading');
 		}
-		Y.one('#header .lower-header').removeClass('loading');
-		Y.one('#header > .wrapper').removeClass('loading');
+		if(Y.one('#header .lower-header')){
+			Y.one('#header .lower-header').removeClass('loading');
+		}
+		if(Y.one('#header > .wrapper')){
+			Y.one('#header > .wrapper').removeClass('loading');
+		}
+		if(Y.one('#home-header .lower-header')){
+			Y.one('#home-header .lower-header').removeClass('loading');
+		}
+		if(Y.one('#home-header > .wrapper')){
+			Y.one('#home-header > .wrapper').removeClass('loading');
+		}
 
 
 		Y.on('windowresize',function(){
@@ -347,15 +357,21 @@ Y.use('node', 'event-mouseenter', 'squarespace-util', function(Y) {
 			if(Y.one('#canvas .lower-header.bottom')){
 				Y.one('#canvas .lower-header').removeClass('bottom');
 			}
-			Y.one('#header > .wrapper').removeClass('middle');
-			if(windowY > Y.one('#header > .wrapper').get('offsetHeight')){
-				if(Y.one('#canvas .lower-header')){
-					Y.one('#canvas .lower-header').addClass('bottom');
-				}
-				Y.one('#header > .wrapper').addClass('middle');
-			}else{
-				Y.one('#canvas .lower-header').removeClass('bottom');
+			if(Y.one('#header > .wrapper')){
 				Y.one('#header > .wrapper').removeClass('middle');
+			}
+			if(Y.one('#header > .wrapper')){
+				if(windowY > Y.one('#header > .wrapper').get('offsetHeight')){
+					if(Y.one('#canvas .lower-header')){
+						Y.one('#canvas .lower-header').addClass('bottom');
+					}
+					Y.one('#header > .wrapper').addClass('middle');
+				}else{
+					Y.one('#canvas .lower-header').removeClass('bottom');
+					if(Y.one('#header > .wrapper')){
+					Y.one('#header > .wrapper').removeClass('middle');
+				}
+				}
 			}
 		}
 		function emptyNav(){
@@ -407,17 +423,17 @@ Y.use('node', 'event-mouseenter', 'squarespace-util', function(Y) {
 						masonry.set('gutter',productGutter);
 					}else if(productGutter < 25){
 						if(windowX < 640){
-							masonry.set('gutter',10);
-						}else if(windowX < 1024){
+							masonry.set('gutter',25);
+						}else if(windowX < 930){
 							masonry.set('gutter',productGutter);
 						}else{
 							masonry.set('gutter',productGutter);
 						}
 					}else{
 						if(windowX < 640){
-							masonry.set('gutter',10);
-						}else if(windowX < 1024){
 							masonry.set('gutter',25);
+						}else if(windowX < 930){
+							masonry.set('gutter',productGutter);
 						}else{
 							masonry.set('gutter',productGutter);
 						}
@@ -427,17 +443,17 @@ Y.use('node', 'event-mouseenter', 'squarespace-util', function(Y) {
 						masonry.set('gutter',indexGutter);
 					}else if(indexGutter < 25){
 						if(windowX < 640){
-							masonry.set('gutter',10);
-						}else if(windowX < 1024){
+							masonry.set('gutter',25);
+						}else if(windowX < 930){
 							masonry.set('gutter',indexGutter);
 						}else{
 							masonry.set('gutter',indexGutter);
 						}
 					}else{
 						if(windowX < 640){
-							masonry.set('gutter',10);
-						}else if(windowX < 1024){
 							masonry.set('gutter',25);
+						}else if(windowX < 930){
+							masonry.set('gutter',indexGutter);
 						}else{
 							masonry.set('gutter',indexGutter);
 						}
@@ -509,7 +525,7 @@ Y.use('node', 'event-mouseenter', 'squarespace-util', function(Y) {
 
 						loadAllImages(flowItemFirst);
 					}
-					if(windowX < 1024){
+					if(windowX < 930){
 						if(flowItemFirst && flowItemFirst.siblings('.flow-item').size() >= 1){
 							if(isGallery && galleryMargin < 1){
 								Y.all('.flow-item').setStyle('margin-left','0');
@@ -553,7 +569,7 @@ Y.use('node', 'event-mouseenter', 'squarespace-util', function(Y) {
 		function flowItemsMiddle(){
 			if(flowItems && flowItemFirst){
 				predictFlowHeight();
-				if(Y.one('.site-vertical-alignment-middle') && windowX >= 1024){
+				if(Y.one('.site-vertical-alignment-middle') && windowX >= 930){
 					if((isGallery && !Y.one('.gallery-single-image-fill')) || (isProducts && !Y.one('product-item-single-image-fill'))){
 						if(flowItemsGreater){
 							flowItems.removeClass('middle');

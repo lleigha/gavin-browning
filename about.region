@@ -59,20 +59,6 @@
 				<nav class="navigation">
 					<squarespace:navigation navigationId="main-nav" template="homenavigation" />
 				</nav>
-				<div class="lower-header loading">
-					<nav class="navigation-secondary">
-						<squarespace:navigation navigationId="secondary-nav" template="homenavigation" />
-					</nav>
-					{.section website}
-						{.if socialAccounts}
-						<nav class="social">
-							<ul data-content-field="connected-accounts">
-								{.repeated section socialAccounts}<li><a{.if profileUrl} href="{profileUrl}" target="_blank"{.or} title="{screenname}"{.end} class="social-{serviceName}"></a></li>{.end}
-							</ul>
-						</nav>
-						{.end}
-					{.end}
-				</div>
 			</div>
 			<a href="#" id="navOpen"></a>
 		</header>
@@ -84,13 +70,6 @@
             });
           });
         </script>
-		{.section item}
-			{.if productType}{.or}
-				{.main-image?}
-					<figure id="thumbnail" class="content-fill"><img {@|image-meta} /></figure>
-				{.end}
-			{.end}
-		{.or}
 			{.section collection}
 				{.collectionTypeNameEquals? products}{.or}{.collectionTypeNameEquals? gallery}{.or}{.collectionTypeNameEquals? index}{.or}
 					{.section mainImage}
@@ -100,7 +79,14 @@
 			{.end}
 		{.end}
 
-
+	<div id="about">
+		<main id="main" role="main" class="main-about{.section item}{.main-image?}has-img{.end}{.or}{.section collection}{.section mainImage}has-img{.end}{.end}{.end}">
+			<div class="wrapper" data-content-field="main-content">
+				{squarespace.main-content}
+				<footer id="footer"><squarespace:block-field id="pageFooter" columns="12" label="Footer Content" /></footer>
+			</div>
+		</main>
+	</div>
 	</div>
 
 

@@ -1,0 +1,15 @@
+{.section collection}
+	<div id="indexList" class="masonry-container loading index-textonly">
+		{.repeated section collections}
+			<article data-url-id="{urlId}">
+				
+				<section class="index-textlink">
+					{.section title}<a href="{fullUrl}" class="index-title">{@}</a>{.end}
+					{.section description}{@}{.end}
+				</section>
+
+			</article>
+		{.end}
+	</div>
+
+{.end}

@@ -8,7 +8,7 @@
 	{squarespace-headers}
 	<squarespace:script src="site.js" combo="true" />
 	<script type="text/javascript">
-		WebFontConfig = { fontdeck: { id: '51097' } };
+		WebFontConfig = { fontdeck: { id: '51998' } };
 
 		(function() {
 		  var wf = document.createElement('script');
@@ -81,7 +81,7 @@
           Y.use('squarespace-ui-base', function(Y) {
             Y.one("#siteTitle").plug(Y.Squarespace.TextShrink, {
               parentEl: Y.one('#siteHeader'),
-              triggerWidth: 1024
+              triggerWidth: 930
             });
           });
         </script>

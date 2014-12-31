@@ -14,6 +14,8 @@
 
 @contentWidth:880px;
 
+@contentWidthSmall: 685px;
+
 @contentPadding:40px;
 
 @contentPaddingSmall:25px;
@@ -173,7 +175,7 @@ body{
 }
 @media screen and ( max-width: 640px ){
 	// collapse sqs layouts
-	@import 'sqs-grid-breaker';
+	//@import 'sqs-grid-breaker';
 }
 .loading{
 	opacity:0 !important;
@@ -395,12 +397,14 @@ p {
 @media screen and ( max-width: 640px ){
 	.sqs-layout{
 		overflow: hidden;
+
 	}
 }
 @media screen and ( min-width: 641px ){
 	#under{
 		padding-top:@headerHeight;
 	}
+
 }
 @media screen and ( min-width: 930px ){
 	#under,
@@ -501,7 +505,7 @@ body:not(.nav-opened){
 
 @media screen and ( max-width: 1024px ){
 	#siteHeader{
-		width: ~"calc(100% - 50px)";
+		
 	}
 	#siteTitle{
 		white-space:nowrap;
@@ -519,7 +523,7 @@ body:not(.nav-opened){
 	display:inline-block;
 	.border-box;
 
-	padding:10px;
+	padding:@contentPaddingSmall;
 
 	height:100%;
 
@@ -560,12 +564,11 @@ body:not(.nav-opened){
 			.transition;
 			height:auto;
 			padding-top:@contentPadding;
-			width: 880px;
+			width: @contentWidth;
 			margin: auto;
 		}
 		.navigation{
 			display:inline-block;
-			margin-left: @contentPaddingSmall;
 		}
 
 		#logo {
@@ -636,7 +639,7 @@ body:not(.nav-opened){
 
 	a{
 		display:inline-block;
-		margin: .2em 0;
+		margin: .225em 0;
 		border-bottom: solid 2px;
 		border-bottom-color: white;
 		color:@navColor;
@@ -895,19 +898,37 @@ body:not(.product-category-links-category-links-only){
 	}
 }
 
-@media screen and ( min-width: 641px ){
+@media screen and ( min-width: 735px ){
+
 	#header{
+		>.wrapper{
+			height:auto;
+			padding-top:@contentPadding;
+			width: @contentWidthSmall;
+			margin: auto;
+		}
+
+		#siteHeader{
+			position: relative;
+		}
+
+		#logo {
+			padding: 0;
+		}
 		position:absolute;
 		height:@headerHeight;
+
+		.navigation{
+			display: inline-block;
+		}
 	}
 	.dialog-open #header{
 		position:absolute;
 	}
 	#logo{
-		padding:20px @contentPaddingSmall;
+		padding:20px 0;
 	}
 	#siteTitle{
-		line-height:@headerHeight - 40px;
 		font-weight: normal;
 	}
 	#navOpen{
@@ -915,6 +936,7 @@ body:not(.product-category-links-category-links-only){
 	}
 	#navOpen,
 	#navClose{
+		display: none;
 		width:@headerHeight;
 		height:@headerHeight;
 		line-height:@headerHeight;
@@ -927,7 +949,9 @@ body:not(.product-category-links-category-links-only){
 		}
 	}
 }
+
 @media screen and ( min-width: 930px ){
+
 	#header{
 		top:0;
 		bottom:0;
@@ -937,15 +961,20 @@ body:not(.product-category-links-category-links-only){
 		.overflow-auto;
 
 		>.wrapper{
-			height:auto;
-			padding-top:@contentPadding;
-			width: 880px;
-			margin: auto;
+			width: @contentWidth;
 		}
 		.navigation{
 			display:inline-block;
 			margin-left: @leftIndent;
 		}
+
+		#siteHeader{
+			position: absolute;
+			display: block;
+			float: left;
+			text-align: left;
+		}
+
 	}
 	.lower-header{
 		display:block;
@@ -957,11 +986,6 @@ body:not(.product-category-links-category-links-only){
 	#navOpen,
 	#under{
 		display:none;
-	}
-	#siteHeader{
-		display: block;
-		float: left;
-		text-align: left;
 	}
 	#logo{
 		height:auto;
@@ -1135,11 +1159,11 @@ body:not(.product-category-links-category-links-only){
 	min-height:100%;
 	min-height: ~"calc(100% - 240px)";
 
-	padding-top:@headerHeight + 20px;
+	padding-top:20px;
 
 
 	>.wrapper{
-		padding:10px;
+		padding:@contentPaddingSmall;
 		// .transition(opacity);
 	}
 }
@@ -1170,14 +1194,23 @@ body:not(.product-category-links-category-links-only){
 		}
 	}
 }
-@media screen and ( min-width: 930px ){
+
+@media screen and ( min-width: 735px ){
 	#main{
-		width:@contentWidth;
+		padding-top: @headerHeight + 50px;
+		width:@contentWidthSmall;
 		margin: auto;
 		>.wrapper{
 			padding:0;
 			height:100%;
 		}
+	}
+}
+
+@media screen and ( min-width: 930px ){
+	#main{
+		width:@contentWidth;
+		padding-top: @headerHeight + 20px;
 	}
 }
 
@@ -1380,7 +1413,7 @@ body:not(.product-category-links-category-links-only){
 
 #flowContent{
 	.border-box;
-	padding:10px;
+	padding:@contentPaddingSmall;
 }
 #flowItems{
 	position:relative;
@@ -1441,7 +1474,7 @@ body:not(.product-category-links-category-links-only){
 	background:fade(@pageColor,100%);
 }
 #flowBody{
-	padding:10px;
+	padding:@contentPaddingSmall;
 }
 #flowBodyOpen{
 	display:none;

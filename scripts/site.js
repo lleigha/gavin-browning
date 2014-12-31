@@ -443,7 +443,7 @@ Y.use('node', 'event-mouseenter', 'squarespace-util', function(Y) {
 						masonry.set('gutter',indexGutter);
 					}else if(indexGutter < 25){
 						if(windowX < 640){
-							masonry.set('gutter',25);
+							masonry.set('gutter',10);
 						}else if(windowX < 930){
 							masonry.set('gutter',indexGutter);
 						}else{
@@ -451,7 +451,7 @@ Y.use('node', 'event-mouseenter', 'squarespace-util', function(Y) {
 						}
 					}else{
 						if(windowX < 640){
-							masonry.set('gutter',25);
+							masonry.set('gutter',10);
 						}else if(windowX < 930){
 							masonry.set('gutter',indexGutter);
 						}else{

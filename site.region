@@ -104,7 +104,7 @@
 		<main id="main" role="main" class="{.section item}{.main-image?}has-img{.end}{.or}{.section collection}{.section mainImage}has-img{.end}{.end}{.end}">
 			<div class="wrapper" data-content-field="main-content">
 				{squarespace.main-content}
-				<footer id="footer"><squarespace:block-field id="pageFooter" columns="12" label="Footer Content" /></footer>
+				<footer id="footer"><squarespace:block-field id="pageFooter" columns="12" label="Footer Content" lock-layout="true" /></footer>
 			</div>
 		</main>
 

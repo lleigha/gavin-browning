@@ -42,6 +42,8 @@ Y.use('node', 'event-mouseenter', 'squarespace-util', function(Y) {
 		toggleFolder();
 
 
+	
+
 		if(isProducts){
 			// Remove active link from parent products collection when category link is active
 			if(Y.one('.products-child .active-link')){
@@ -108,9 +110,9 @@ Y.use('node', 'event-mouseenter', 'squarespace-util', function(Y) {
 				element: Y.all('.masonry-item'),
 				design: 'autocolumns',
 				designOptions: {
-					columnWidth: productColumnWidth,	// column width (minimum width or maximum width depending on culumnWidthBehavior setting). Needs to be a number.
-					columnWidthBehavior: 'min',			// column width style (min or max).
-					gutter: productGutter,				// sets equal spacing around images. Inherent units are 'px'
+					columnWidth: 450,	// column width (minimum width or maximum width depending on culumnWidthBehavior setting). Needs to be a number.
+					columnWidthBehavior: 'max',			// column width style (min or max).
+					gutter: 34,				// sets equal spacing around images. Inherent units are 'px'
 					aspectRatio: false,					// explicitly sets items to a fixed aspect ratio (Width/Height)
 					mixedContent: true					// useful when non-image content, when only images, no dom access is required because the initializer reads the image data attributes to calculate the height of each item (when non-image, the script needs to get the height of the items)
 				},
@@ -121,10 +123,6 @@ Y.use('node', 'event-mouseenter', 'squarespace-util', function(Y) {
 
 			masonryResetMode();
 
-			if(isIndex){
-				masonry.set('columnWidth',indexColumnWidth);
-				masonry.set('gutter',indexGutter);
-			}
 		}
 
 		masonryMobile();
@@ -379,43 +377,7 @@ Y.use('node', 'event-mouseenter', 'squarespace-util', function(Y) {
 				navOpen.addClass('empty');
 			}
 		}
-		function masonryTweaks(){
-			// Sets column and gutter width in masonry to tweak values
-			if(masonry){
-				var tweakPrefix;
-				if(isProducts){
-					tweakPrefix = 'product';
-				}else{
-					tweakPrefix = 'index';
-				}
-
-				columnWidth = parseInt(Y.Squarespace.Template.getTweakValue(tweakPrefix+'ColumnWidth'),10);
-				gutter = parseInt(Y.Squarespace.Template.getTweakValue(tweakPrefix+'Gutter'),10);
-				
-				if(Y.one('.product-aspect-ratio-auto') && isProducts){
-					Y.all('.masonry-thumbnail .intrinsic').removeClass('content-fill');
-				}else if(Y.one('.index-aspect-ratio-auto') && isIndex){
-					Y.all('.masonry-thumbnail .intrinsic').removeClass('content-fill');
-				}else{
-					Y.all('.masonry-thumbnail .intrinsic').addClass('content-fill');
-				}
-
-				masonry.set('columnWidth',columnWidth);
-				masonry.set('gutter',gutter);
-
-				masonry.getImages().each(function(img) {
-					img.loader.set('mode', 'fill');
-				});
-
-				if(isProducts){
-					productColumnWidth = columnWidth;
-					productGutter = gutter;
-				}else{
-					indexColumnWidth = columnWidth;
-					indexGutter = gutter;
-				}
-			}
-		}
+		
 		function masonryMobile(){
 			if(masonry){
 				if(isProducts){
@@ -439,19 +401,19 @@ Y.use('node', 'event-mouseenter', 'squarespace-util', function(Y) {
 						}
 					}
 				}else if(isIndex){
-					if(indexGutter < 10){
+					if(indexGutter < 16){
 						masonry.set('gutter',indexGutter);
 					}else if(indexGutter < 25){
-						if(windowX < 640){
-							masonry.set('gutter',10);
+						if(windowX < 735){
+							masonry.set('gutter',16);
 						}else if(windowX < 930){
 							masonry.set('gutter',indexGutter);
 						}else{
 							masonry.set('gutter',indexGutter);
 						}
 					}else{
-						if(windowX < 640){
-							masonry.set('gutter',10);
+						if(windowX < 735){
+							masonry.set('gutter',16);
 						}else if(windowX < 930){
 							masonry.set('gutter',indexGutter);
 						}else{

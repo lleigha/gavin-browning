@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	{squarespace-headers}
 	<squarespace:script src="site.js" combo="true" />
+	<!--
 	<script type="text/javascript">
 		WebFontConfig = { fontdeck: { id: '51097' } };
 
@@ -20,7 +21,7 @@
 		  s.parentNode.insertBefore(wf, s);
 		})();
 	</script>
-
+	-->
 </head>
 
 <body id="{squarespace.page-id}" class="{squarespace.page-classes}{.section website}{.section logoImageUrl} logo-image{.or} site-title{.end}{.end}">
